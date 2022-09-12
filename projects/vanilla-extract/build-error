@@ -1,0 +1,117 @@
+➜  vanilla-extract git:(main) pnpm build
+
+> vanilla-extract@0.0.0 build /Users/horacioh/playground/css-comparison/projects/vanilla-extract
+> vite build
+
+vite v3.1.0 building for production...
+✓ 81 modules transformed.
+warnings when minifying css:
+▲ [WARNING] Unexpected "=" [css-syntax-error]
+
+    <stdin>:899:8:
+      899 │ options => {
+          ╵         ^
+
+
+▲ [WARNING] Expected ":" [css-syntax-error]
+
+    <stdin>:900:5:
+      900 │   var className = config.defaultClassName;
+          │      ^
+          ╵      :
+
+
+▲ [WARNING] Expected ":" [css-syntax-error]
+
+    <stdin>:902:5:
+      902 │   var selections = _objectSpread2(_objectSpread2({}, config.defau...
+          │      ^
+          ╵      :
+
+
+▲ [WARNING] Expected ":" [css-syntax-error]
+
+    <stdin>:904:5:
+      904 │   for (var variantName in selections) {
+          │      ^
+          ╵      :
+
+
+▲ [WARNING] Comments in CSS use "/* ... */" instead of "//" [js-comment-in-css]
+
+    <stdin>:913:8:
+      913 │         // @ts-expect-error
+          ╵         ~~
+
+
+▲ [WARNING] Comments in CSS use "/* ... */" instead of "//" [js-comment-in-css]
+
+    <stdin>:917:31:
+      917 │       var selectionClassName = // @ts-expect-error
+          ╵                                ~~
+
+
+▲ [WARNING] Unexpected "=" [css-syntax-error]
+
+    <stdin>:936:21:
+      936 │ [lang*='en'] options => {
+          ╵                      ^
+
+
+▲ [WARNING] Expected ":" [css-syntax-error]
+
+    <stdin>:937:5:
+      937 │   var className = config.defaultClassName;
+          │      ^
+          ╵      :
+
+
+▲ [WARNING] Expected ":" [css-syntax-error]
+
+    <stdin>:939:5:
+      939 │   var selections = _objectSpread2(_objectSpread2({}, config.defau...
+          │      ^
+          ╵      :
+
+
+▲ [WARNING] Expected ":" [css-syntax-error]
+
+    <stdin>:941:5:
+      941 │   for (var variantName in selections) {
+          │      ^
+          ╵      :
+
+
+▲ [WARNING] Comments in CSS use "/* ... */" instead of "//" [js-comment-in-css]
+
+    <stdin>:950:8:
+      950 │         // @ts-expect-error
+          ╵         ~~
+
+
+▲ [WARNING] Comments in CSS use "/* ... */" instead of "//" [js-comment-in-css]
+
+    <stdin>:954:31:
+      954 │       var selectionClassName = // @ts-expect-error
+          ╵                                ~~
+
+
+▲ [WARNING] Unexpected "{" [css-syntax-error]
+
+    <stdin>:970:2:
+      970 │ } {
+          ╵   ^
+
+
+▲ [WARNING] Unexpected "{" [css-syntax-error]
+
+    <stdin>:992:28:
+      992 │ ._4kqzuhc dt, ._4kqzuhc dl, {
+          ╵                             ^
+
+
+dist/assets/profile-image.e7022976.jpg   16.17 KiB
+dist/index.html                          0.53 KiB
+dist/assets/index.b01f0698.css           14.90 KiB / gzip: 2.62 KiB
+dist/assets/index.3e16626d.js            190.15 KiB / gzip: 60.37 KiB
+➜  vanilla-extract git:(main) 
