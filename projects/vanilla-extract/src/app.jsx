@@ -1,8 +1,19 @@
 import React from "react";
+import { sprinkles } from "./styles/sprinkles.css";
+import * as styles from "./styles/app.css";
+import { style } from "@vanilla-extract/css";
+
+import profileImg from "./assets/images/profile-image.jpg";
 
 export function App() {
   return (
-    <div>
+    <div
+      className={sprinkles({
+        backgroundColor: "light",
+        color: "primary",
+        fontFamily: "base",
+      })}
+    >
       <AccountOverview />
       <Main>
         <LatestTransactions />
@@ -17,20 +28,20 @@ export function App() {
 
 function AccountOverview() {
   return (
-    <header role="banner" className="[ site-head ] [ bg-tertiary-glare ]">
-      <div className="wrapper">
-        <div className="site-head__inner">
-          <h1 className="text-600">Account overview</h1>
-          <div className="user">
+    <header role="banner" className={styles.siteHead.root}>
+      <div className={styles.wrapper}>
+        <div className={styles.siteHead.inner}>
+          <h1 className={styles.siteHead.h1}>Account overview</h1>
+          <div className={styles.user.root}>
             <a href="#">My profile</a>
             <img
-              src="./assets/images/profile-image.jpg"
+              className={styles.user.img}
+              src={profileImg}
               width="50"
               height="50"
               alt="Profile image for Lorem Ipsum"
             />
           </div>
-          hello
         </div>
       </div>
     </header>
@@ -40,22 +51,26 @@ function AccountOverview() {
 function Main({ children }) {
   return (
     <main>
-      <article className="wrapper">{children}</article>
+      <article className={styles.wrapper}>{children}</article>
     </main>
   );
 }
 
 function LatestTransactions() {
   return (
-    <div className="[ key-header ] [ splitter ] [ gap-top-700 ]">
-      <h2 className="text-700" id="transaction-label">
+    <div
+      className={`${styles.splitter} ${styles.gapTop({
+        size: "700",
+      })} ${styles.keyHeader}`}
+    >
+      <h2 className={sprinkles({ fontSize: "700" })} id="transaction-label">
         Latest transactions
       </h2>
       <aside>
-        <a href="#" className="[ button ] [ radius ]" data-variant="ghost">
+        <a href="#" className={styles.button({ type: "ghost" })}>
           Get statement
         </a>
-        <a href="#" className="[ button ] [ radius ]">
+        <a href="#" className={styles.button({ type: "default" })}>
           Make payment
         </a>
       </aside>
@@ -64,20 +79,30 @@ function LatestTransactions() {
 }
 
 function Splitter({ children }) {
-  return <div className="[ splitter ] [ gap-top-600 ]">{children}</div>;
+  return (
+    <div className={`${styles.splitter} ${styles.gapTop({ size: "600" })}`}>
+      {children}
+    </div>
+  );
 }
 
 function Transactions() {
   return (
     <section
-      className="[ table-group ] [ flow radius ]"
+      className={`${styles.tableGroup} ${styles.flow} ${styles.radius}`}
       aria-labelledby="transaction-label"
     >
-      <h3 className="color-secondary-shade text-400 weight-medium">
+      <h3
+        className={sprinkles({
+          color: "secondary-shade",
+          fontSize: "400",
+          fontWeight: "medium",
+        })}
+      >
         14th July 2020
       </h3>
       <table>
-        <thead className="visually-hidden">
+        <thead className={styles.visuallyHidden}>
           <tr>
             <th>Description</th>
             <th>Category</th>
@@ -88,7 +113,11 @@ function Transactions() {
           <tr>
             <td data-type="expense">Lorem ipsum dolor sit amet</td>
             <td>
-              <span className="[ pill ] [ radius bg-tertiary color-light ]">
+              <span
+                className={`${styles.pill({ color: "tertiary" })} ${
+                  styles.radius
+                }`}
+              >
                 Expenses
               </span>
             </td>
@@ -97,7 +126,11 @@ function Transactions() {
           <tr>
             <td data-type="expense">Lorem ipsum dolor sit amet</td>
             <td>
-              <span className="[ pill ] [ radius bg-quaternary color-light ]">
+              <span
+                className={`${styles.pill({ color: "quaternary" })} ${
+                  styles.radius
+                }`}
+              >
                 Bills
               </span>
             </td>
@@ -106,7 +139,11 @@ function Transactions() {
           <tr>
             <td data-type="bill">Lorem ipsum dolor sit amet</td>
             <td>
-              <span className="[ pill ] [ radius bg-quaternary color-light ]">
+              <span
+                className={`${styles.pill({ color: "quaternary" })} ${
+                  styles.radius
+                }`}
+              >
                 Bills
               </span>
             </td>
@@ -114,11 +151,17 @@ function Transactions() {
           </tr>
         </tbody>
       </table>
-      <h3 className="color-secondary-shade text-400 weight-medium">
+      <h3
+        className={sprinkles({
+          color: "secondary-shade",
+          fontSize: "400",
+          fontWeight: "medium",
+        })}
+      >
         13th July 2020
       </h3>
       <table>
-        <thead className="visually-hidden">
+        <thead className={styles.visuallyHidden}>
           <tr>
             <th>Description</th>
             <th>Category</th>
@@ -129,7 +172,11 @@ function Transactions() {
           <tr>
             <td data-type="expense">Lorem ipsum dolor sit amet</td>
             <td>
-              <span className="[ pill ] [ radius bg-tertiary color-light ]">
+              <span
+                className={`${styles.pill({ color: "tertiary" })} ${
+                  styles.radius
+                }`}
+              >
                 Expenses
               </span>
             </td>
@@ -138,7 +185,11 @@ function Transactions() {
           <tr>
             <td data-type="expense">Lorem ipsum dolor sit amet</td>
             <td>
-              <span className="[ pill ] [ radius bg-quaternary color-light ]">
+              <span
+                className={`${styles.pill({ color: "quaternary" })} ${
+                  styles.radius
+                }`}
+              >
                 Bills
               </span>
             </td>
@@ -147,7 +198,11 @@ function Transactions() {
           <tr>
             <td data-type="bill">Lorem ipsum dolor sit amet</td>
             <td>
-              <span className="[ pill ] [ radius bg-quaternary color-light ]">
+              <span
+                className={`${styles.pill({ color: "quaternary" })} ${
+                  styles.radius
+                }`}
+              >
                 Bills
               </span>
             </td>
@@ -155,11 +210,17 @@ function Transactions() {
           </tr>
         </tbody>
       </table>
-      <h3 className="color-secondary-shade text-400 weight-medium">
+      <h3
+        className={sprinkles({
+          color: "secondary-shade",
+          fontSize: "400",
+          fontWeight: "medium",
+        })}
+      >
         12th July 2020
       </h3>
       <table>
-        <thead className="visually-hidden">
+        <thead className={styles.visuallyHidden}>
           <tr>
             <th>Description</th>
             <th>Category</th>
@@ -170,7 +231,11 @@ function Transactions() {
           <tr>
             <td data-type="expense">Lorem ipsum dolor sit amet</td>
             <td>
-              <span className="[ pill ] [ radius bg-tertiary color-light ]">
+              <span
+                className={`${styles.pill({ color: "tertiary" })} ${
+                  styles.radius
+                }`}
+              >
                 Expenses
               </span>
             </td>
@@ -179,7 +244,11 @@ function Transactions() {
           <tr>
             <td data-type="expense">Lorem ipsum dolor sit amet</td>
             <td>
-              <span className="[ pill ] [ radius bg-quaternary color-light ]">
+              <span
+                className={`${styles.pill({ color: "quaternary" })} ${
+                  styles.radius
+                }`}
+              >
                 Bills
               </span>
             </td>
@@ -188,7 +257,11 @@ function Transactions() {
           <tr>
             <td data-type="bill">Lorem ipsum dolor sit amet</td>
             <td>
-              <span className="[ pill ] [ radius bg-quaternary color-light ]">
+              <span
+                className={`${styles.pill({ color: "quaternary" })} ${
+                  styles.radius
+                }`}
+              >
                 Bills
               </span>
             </td>
@@ -202,15 +275,62 @@ function Transactions() {
 
 function Summary() {
   return (
-    <section className="[ summary ] [ flow radius ] [ bg-primary color-light ]">
-      <h3 className="color-tertiary-glare text-700">Summary</h3>
-      <dl className="flow">
-        <dt className="text-600 color-tertiary-glare">Balance</dt>
-        <dd className="text-700 font-mono weight-bold">£673.43</dd>
-        <dt className="text-600 color-tertiary-glare">Total outgoings</dt>
-        <dd className="text-700 font-mono weight-bold">-£874.88</dd>
-        <dt className="text-600 color-tertiary-glare">Total income</dt>
-        <dd className="text-700 font-mono weight-bold">+£1548.31</dd>
+    <section
+      className={`${sprinkles({
+        backgroundColor: "primary",
+        color: "light",
+      })} ${styles.summary} ${styles.radius} ${styles.flow}`}
+    >
+      <h3 className={sprinkles({ color: "tertiary-glare", fontSize: "700" })}>
+        Summary
+      </h3>
+      <dl className={styles.flow}>
+        <dt className={sprinkles({ fontSize: "600", color: "tertiary-glare" })}>
+          Balance
+        </dt>
+        <dd
+          className={sprinkles({
+            fontSize: "700",
+            fontWeight: "bold",
+            fontFamily: "mono",
+          })}
+        >
+          £673.43
+        </dd>
+        <dt
+          className={sprinkles({
+            fontSize: "600",
+            color: "tertiary-glare",
+          })}
+        >
+          Total outgoings
+        </dt>
+        <dd
+          className={sprinkles({
+            fontSize: "700",
+            fontWeight: "bold",
+            fontFamily: "mono",
+          })}
+        >
+          -£874.88
+        </dd>
+        <dt
+          className={sprinkles({
+            fontSize: "600",
+            color: "tertiary-glare",
+          })}
+        >
+          Total income
+        </dt>
+        <dd
+          className={sprinkles({
+            fontSize: "700",
+            fontWeight: "bold",
+            fontFamily: "mono",
+          })}
+        >
+          +£1548.31
+        </dd>
       </dl>
     </section>
   );
